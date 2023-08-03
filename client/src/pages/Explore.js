@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
 import AppAppBar from './modules/views/AppAppBar';
 import Button from '@mui/material/Button';
@@ -29,6 +30,7 @@ function Explore() {
   const [isActive, setIsActive] = useState(null);
   const { loading, data, refetch } = useQuery(QUERY_FAVORITES);
   const oldFavorites = data?.assets || [];
+  const navigate = useNavigate();
 
   const [addFavorite, { addError }] = useMutation(ADD_FAVORITE, {
     update(cache, { data: { addFavorite } }) {
@@ -68,10 +70,17 @@ function Explore() {
     const assetImage_url = event.target.dataset.image_url;
     const assetOpenSeaId = event.target.dataset.id;
     const assetClassName = event.target.className;
-
-    if (assetClassName.includes(' red ')) {
+    if (!Auth.loggedIn()) {
+      try {
+        navigate("/login");
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    else if (assetClassName.includes(' red ')) {
       //remove favorite
       try {
+        //eslint-disable-next-line
         const { dataRemoved } = await removeFavorite({
           variables: {
             assetUser: Auth.getUser().data.username,

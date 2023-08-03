@@ -1,6 +1,6 @@
 {
   "name": "moonbay",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "server/server.js",
   "scripts": {
@@ -29,6 +29,7 @@
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "react-router-dom": "^6.14.2",
     "react-spinners": "^0.11.0"
   }
 }
