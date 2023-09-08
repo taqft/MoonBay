@@ -17,13 +17,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/theresaqueryforthat/MoonBay.git"
+    "url": "git+https://github.com/taqft/MoonBay.git"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/theresaqueryforthat/MoonBay/issues"
+    "url": "https://github.com/taqft/MoonBay/issues"
   },
-  "homepage": "https://github.com/theresaqueryforthat/MoonBay#readme",
+  "homepage": "https://github.com/taqft/MoonBay#readme",
   "dependencies": {
     "apollo-server-express": "^3.6.7",
     "axios": "^0.26.1",
