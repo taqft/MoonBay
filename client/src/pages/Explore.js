@@ -123,7 +123,6 @@ function Explore() {
       }
       setIsLoading(true);
       const { data } = await axios.get('https://api.opensea.io/api/v1/assets?order_direction=desc&limit=12&include_orders=false', config);
-      console.log(data);
       setAssets(data.assets);
       setIsLoading(false);
     })();
