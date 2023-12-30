@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { ApolloClient, ApolloProvider, from, HttpLink, InMemoryCache,} from '@apollo/client';
 import { useState, useEffect } from 'react';
-import PacmanLoader from 'react-spinners/PacmanLoader';
 import Box from '@mui/material/Box';
 import { onError } from '@apollo/client/link/error';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
 import axios from 'axios';
+// import PacmanLoader from 'react-spinners/PacmanLoader';
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
-    graphqlErrors.map(({message, location, path}) => {
+    graphqlErrors.forEach(({message, location, path}) => {
       alert(`GraphQl has an error: ${message}`);
     });
   }
@@ -22,6 +22,7 @@ const link = from([
   new HttpLink({uri:'https://api.opensea.io/api/v1/collections?offset=0&limit=100'})
 ]);
 
+// eslint-disable-next-line no-unused-vars
 const client = new ApolloClient({
   link: link,
   cache: new InMemoryCache(),
@@ -35,7 +36,9 @@ const item = {
 };
 
 function ProductValues() {
+    // eslint-disable-next-line no-unused-vars
   	const [assets, setAssets] = useState([]);
+    // eslint-disable-next-line no-unused-vars
   	const [isLoading, setIsLoading] = useState(false);
   	useEffect(() => {
       // do the initial api fetching
