@@ -1,23 +1,21 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
-import { Field, Form, FormSpy } from 'react-final-form';
 import Typography from './modules/components/Typography';
 import AppFooter from './modules/views/AppFooter';
 import AppAppBar from './modules/views/AppAppBar';
 import AppForm from './modules/views/AppForm';
-import { email, required } from './modules/form/validation';
-import RFTextField from './modules/form/RFTextField';
-import FormButton from './modules/form/FormButton';
-import FormFeedback from './modules/form/FormFeedback';
 import withRoot from './modules/withRoot';
-
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
-
 import Auth from '../utils/auth';
+// import Grid from '@mui/material/Grid';
+// import { Field, Form, FormSpy } from 'react-final-form';
+// import { email, required } from './modules/form/validation';
+// import RFTextField from './modules/form/RFTextField';
+// import FormButton from './modules/form/FormButton';
+// import FormFeedback from './modules/form/FormFeedback';
 
 const SignUp = () => {
   const [formState, setFormState] = useState({

@@ -23,6 +23,7 @@ import { useQuery, useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 
 function Favorites() {
+  // eslint-disable-next-line no-unused-vars
   const [assets, setAssets] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isActive, setIsActive] = useState(null);
